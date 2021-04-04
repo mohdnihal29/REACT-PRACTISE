@@ -3,6 +3,7 @@ import classes from "./App.css";
 
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
+import WithClass from "../hoc/WithClass";
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
     persons: [
       { id: "errer", name: "Nihal", age: 27 },
       { id: "dsvdbb", name: "Manu", age: 25 },
-      { id: "dsgsrg", name: "Max", age: 27 },
+      { id: "dsgsrg", name: "Max", age: 30 },
       { id: "sdfsde", name: "Jonas", age: 45 },
     ],
     showPersons: false,
@@ -85,7 +86,7 @@ class App extends Component {
     }
 
     return (
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
         <button
           onClick={() => {
             this.setState({ showCockpit: false });
@@ -102,7 +103,7 @@ class App extends Component {
           />
         ) : null}
         {persons}
-      </div>
+      </WithClass>
     );
   };
   // return React.createElement(
